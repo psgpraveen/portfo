@@ -11,7 +11,7 @@ app.use(cors())
 app.get("/status", async (req, res) => {
   let data=await status.find({});
   res.send(data);
-});
+});   
 app.get("/comment", async (req, res) => {
   let data=await comments.find({});
   res.send(data);
