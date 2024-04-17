@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const serverless = require("serverless-http");
 const ps = require("./mongo/dbconnect");
 const status = require("./mongo/status");
 const comments = require("./mongo/comment");
@@ -59,3 +60,4 @@ app.post('/status', async (req, res) => {
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`);
 })
+module.exports.handler = serverless(app);
