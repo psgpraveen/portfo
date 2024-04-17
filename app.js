@@ -60,4 +60,5 @@ app.post('/status', async (req, res) => {
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`);
 })
+api.use("/api/", router);
 module.exports.handler = serverless(app);
