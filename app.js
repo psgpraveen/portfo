@@ -18,7 +18,7 @@ app.get("/comment", async (req, res) => {
   let data=await comments.find({});
   res.send(data);
 });
-
+ 
 app.post('/', async (req, res) => {
     try {
         const newData = new ps(req.body); 
@@ -61,5 +61,5 @@ app.post('/status', async (req, res) => {
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`);
 })
-api.use("/api/", router);
+// api.use("/api/", router);
 module.exports.handler = serverless(app);
