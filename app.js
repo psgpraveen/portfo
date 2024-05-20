@@ -1,7 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const {router} = require("express");
-const serverless = require("serverless-http");
 const ps = require("./mongo/dbconnect");
 const status = require("./mongo/status");
 const comments = require("./mongo/comment");
@@ -61,7 +59,7 @@ app.post('/status', async (req, res) => {
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`);
 })
-api.use("/api/",  router);
+// api.use("/api/",  router);
 
-export const  handler  = serverless(api);
+// export const  handler  = serverless(api);
 // api.use("/api/", router);
